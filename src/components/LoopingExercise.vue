@@ -34,8 +34,8 @@
                     <p>Use the v-for directive to loop over the "blog" property on the comments data. In the curlies
                         inside of the template for each property on the object we want to print the key(property name)
                         and value contained at that key.</p>
-                    <div class="blog" v-for="(value, key) in blog">
-                        <p>{{key}}: {{value}}</p>
+                    <div class="blog" v-for="(value, key, index) in blog">
+                        <p>{{key}} {{value}} {{index}}</p>
                     </div>
                 </div>
             </div>
@@ -49,11 +49,15 @@
         name: 'looping-exercise',
         data() {
             return {
-                blog: {
+                blog: [{
                     title: "Using v-for in Vue",
                     description: "How to use a v-for directive in Vue.",
                     author: "D$"
-                },
+                }, {
+                    title: "Using v-for in Vue",
+                    description: "How to use a v-for directive in Vue.",
+                    author: "D$"
+                }],
                 players: [
                     {
                         photo: "https://robohash.org/D$",
